@@ -1,14 +1,18 @@
 let tablaJuguetes = document.getElementById("tablaJuguetes")
 let tablaFarmacia = document.getElementById("tablaFarmacia")
 let añadir = document.getElementById("añadir")
-
+let nombre = document.getElementById("nombre")
+let apellido = document.getElementById("apellido")
+let telefono = document.getElementById("telefono")
+let email = document.getElementById("email")
+let btnSubmit = document.getElementById("submit")
 
 
 
   if (document.title.includes("Franco's | Farmacia") || document.title.includes("Franco's | Juguetes")) {
     fetching()
-  } else if (document.title.includes("Contacto")){
-    alertSubmit() 
+  } else if (document.title.includes("Franco's | Contacto")){
+    validacionFormYAlert() 
   } else if(document.title.includes("Franco's Vet y Pet Shop")){
     carousel()
     myScript()
@@ -80,32 +84,37 @@ if (tablaFarmacia) {
   }
 }
 
-var carrito =[]
 
-function alertSubmit(){
-document.getElementById("submit").addEventListener("click", (event)=>{
+function validacionFormYAlert(){
+    nombre.addEventListener('blur', validacionForm)
+    apellido.addEventListener('blur', validacionForm)
+    telefono.addEventListener('blur', validacionForm)
+    email.addEventListener('blur', validacionForm)
+      
+    function validacionForm(e){
+      if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== ""){
+        btnSubmit.removeAttribute('disabled');
+      } 
+    }
 
-  document.getElementById("formulario").reset()
-    Swal.fire({
-        title: '¿Quieres guardar los cambios?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: `Guardar y Enviar`,
-        denyButtonText: `No Guardar`,
-      }).then((result) => {
 
-        if (result.isConfirmed) {
-          Swal.fire('Muchas Gracias por Escribirnos!', '', 'success')
-          document.getElementById("formulario").reset()
-        } else if (result.isDenied) {
-          Swal.fire('No se envió la Información', '', 'info')
-        }
-        
-      })
 
-})
+    btnSubmit.addEventListener("click", (event)=>{
+      event.preventDefault()
+      document.getElementById("formulario").reset()
+        Swal.fire({
+            icon: 'success',
+            title: `¡Tus datos fueron envíados con exito, nos pondremos en contacto en breve!`,
+            confirmButtonText: '<i class="material-icons right">thumb_up</i>Genial!',
+            timer: 3500,
+          }).then((result) => {
+            window.location.href ='/'
+          })
+
+    })
+
+  
 }
-
 function carousel(){
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
@@ -117,3 +126,6 @@ function carousel(){
     });
   });
 }
+
+
+var carrito =[]

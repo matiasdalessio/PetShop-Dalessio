@@ -94,6 +94,10 @@ main{
     max-height: 40em;
 }
 
+.h1Formulario{
+    font-size: 4.5vw;
+}
+
 .imgServContacto{
     width: 4em;
     height: 4em;
@@ -396,8 +400,9 @@ footer{
 
 .divIconos{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     top: 15px;
     
 }
+
