@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <title>Franco's Vet y Pet Shop</title>
+</head>
+<body>
+    <header>
+        <div class="z-depth-5 navbar-fixed">
+            <nav>
+              <div class=" container navHeader min-height-xl">
+                <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+                <ul class="right ">
+                  <li><a class="navbar" href="index.html">INICIO</a></li>
+                  <li><a class="navbar" href="jugueteria.html">JUGUETERÍA</a></li>
+                  <li><a class="navbar" href="farmacia.html">FARMACIA</a></li>
+                  <li><a class="navbar" href="contacto.html">CONTACTO</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+    </header>
+    <main>
+        <div class=" carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="./assets/Collage1.jpg"> </a>
+            <a class="carousel-item" href="#two!"><img class="imgCarousel2" src="./assets/Collage2.jpg"></a>
+        </div >
+        <h1 class="row col l5 offset-l2">Bienvenido a Franco's</h1>  
+        <div class="container titulosEImg">
+          <img class=" z-depth-5 imgH1" src="./assets/perro medico.jpg" alt="paciente">
+          <div class="h1Yh2">
+            <h2 class=" h2Main center-align">Tu mascota... en las mejores manos </h2>  
+          </div>
+        </div>
+        <div class="center-align ">
+          <div class="container mainTexto">
+            <div class="contenedorTextoIndex">
+              <h3 class="" >¿Quiénes somos?</h2> 
+              <h5 class="h5Main">Franco's es un espacio donde tratar a tu mascota como se merece, cuidando cada detalle y haciendolo sentir como en casa. Nuestros especialistas podrán brindarle asesoramiento y diagnóstico sobre los cuidados que requiere su mascota. Para realizar una consulta, complete el formulario en el siguiente enlace. ¡Nos comunicaremos a la brevedad!</h5>
+              <a class="z-depth-5 btn" href="./contacto.html">CONTACTO</a>  
+            </div>
+            <img class="z-depth-5 imgTexto" src="./assets/mascota y dueña.jpg" alt="mascota con su dueña">
+          </div>
+        </div>
+          <div class="container ubicacion">
+            <iframe class=" iframe z-depth-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.686973275929!2d-58.432567884770116!3d-34.612076180457336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405%20CCB%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1616703210144!5m2!1ses-419!2sar"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="textoUbicacion center-align">
+            <h2 class="h2Main center-align ">Nuestra Ubicación</h2>
+            <h4>Río de Janeiro 300 - CABA</h4>
+          </div>
+        </div> 
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+          <div class="footer row">
+            <div class="col l4">
+              <h5 class="left-align white-text">Franco's Veterinaria y Pet Shop</h5>
+              <p>Lunes a Sabados 09:00 Hs a 20:00Hs. Domingos y Feriados solo emergencias 24Hs</p>
+              <p>Río de Janeiro 300 - CABA</p>
+            </div>
+            <div class="right-align col l2 offset-l6 ">
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+                <li><a class="grey-text text-lighten-3" href="jugueteria.html">Juguetes</a></li>
+                <li><a class="grey-text text-lighten-3" href="farmacia.html">Farmacia</a></li>
+                <li><a class="grey-text text-lighten-3" href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="divIconos"> 
+              <img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook">
+              <img class="iconos" src="./assets/share_black_24dp.svg" alt="share">
+            </div>
+          </div>
+        </div>
+      </footer>
+      <a  href="https://wa.me/5491141498580"><img class=" btnWhatsapp" src="./assets/btn_whatsapp.png" alt="whatsapp"></a>
+      <script>document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, {
+            indicators: true,
+            fullWidth: true,
+            
+            
+        });
+      });</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Franco's | Contacto</title>
+</head>
+<body>
+  <header>
+    <div class="z-depth-5 navbar-fixed">
+        <nav>
+          <div class="container navHeader min-height-xl">
+            <a href="./index.html"><img src="./assets/logo.png" alt="logo"></a>
+            <ul class="right ">
+              <li><a class="navbar" href="index.html">INICIO</a></li>
+              <li><a class="navbar" href="jugueteria.html">JUGUETERÍA</a></li>
+              <li><a class="navbar" href="farmacia.html">FARMACIA</a></li>
+              <li><a class="navbar" href="contacto.html">CONTACTO</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+</header>
+    <main class="mainContacto">
+        <div class="mainContact">
+            <form id="formulario" class=" z-depth-5 formulario dark-text col s5">
+              <h1 class="h1Formulario">Datos de Contacto</h1>
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input  id="nombre" type="text" class="validate" required aria-required="true">
+                  <label class="black-text" for="nombre" data-error="wrong" data-success="right">Nombre*</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="apellido" type="text" class="validate" required>
+                  <label class="black-text" for="apellido" data-error="wrong" data-success="right">Apellido*</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                    <input id="telefono" type="text" class="validate" required>
+                    <label class="black-text" for="telefono" data-error="wrong" data-success="right">Teléfono*</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">email</i>
+                    <input id="email" type="text" class="validate" required>
+                    <label class="black-text" for="email" data-error="wrong" data-success="right">E-Mail*</label>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">comment</i>
+                  <input id="comentarios" type="text" class="validate">
+                  <label class="black-text" for="comentarios" >Comentarios</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <label class="black-text">Qué mascota es?*</label> 
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" class="validate"/>
+                      <span class="black-text">Perro</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" class="validate"/>
+                      <span class="black-text">Gato</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" class="validate"/>
+                      <span class="black-text">Otro</span>
+                    </label>
+                  </p>
+                  <label class="black-text">Los datos marcados con un "*" son obligatorios.</label>
+                </div>
+                
+                <div class="row">
+                <div class="center-align">
+                <button id="submit" class="btn waves-effect waves-light" type="submit" name="submit" value="Enviar">Enviar
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+                </div>
+            </form>
+          </div>
+          <div class="cajaTextoContacto">
+            <div class="encabezadoTxtContacto">
+              <h2 class="margin-top-0">Qué ofrecemos:</h2>
+              <p class="margin-top-0">En Franco's queremos brindar un servicio integral para nuestros pacientes, por eso disponemos del equipamiento y conocimiento necesario para asistirlos como ellos lo merecen. Trabajamos de forma coordinada con distintos especialistas que realizan interconsultas en nuestro consultorio.</p>
+            </div>
+            <div class="textoContacto">
+              <img class="z-depth-5 imgContacto" src="./assets/medicos.jpg" alt="medicos">
+              <div class="descripcionContacto">
+                <h4 class="flex-align-center">Nuestros Servicios</h4>
+                <div class="servicios">
+                  <div class="nuestrosServicios">
+                    <div class="imgServContacto">
+                      <img src="./assets/clinica.png" alt="clínica">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Clínica y plan sanitario</h5>
+                     
+                    </div>
+                  </div>
+                  <div class="nuestrosServicios">
+                    <div class="z-depth-5 imgServContacto">
+                      <img src="./assets/ecografias.png" alt="ecografías">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Ecografías</h5>
+                      
+                    </div>
+                  </div>
+                  <div class="nuestrosServicios">
+                    <div class="z-depth-5 imgServContacto">
+                      <img src="./assets/cirugia.png" alt="cirugía">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Cirugía</h5>
+                      
+                    </div>
+                  </div>
+                  <div class="nuestrosServicios">
+                    <div class="z-depth-5 imgServContacto">
+                      <img src="./assets/odontologia.png" alt="odontología">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Odontologia</h5>
+                      
+                    </div>
+                  </div >
+                  <div class="nuestrosServicios">
+                    <div class="z-depth-5 imgServContacto">
+                      <img src="./assets/petshop.png" alt="pet shop">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Pet shop y alimentos</h5>
+                      
+                    </div>
+                  </div>
+                  <div class="nuestrosServicios">
+                    <div class="z-depth-5 imgServContacto"> 
+                      <img src="./assets/consultasADomicilio.png" alt="consultas a domicilio">
+                    </div>
+                    <div class="txtServContacto">
+                      <h5>Consultas a domicilio</h5>
+                      
+                    </div>
+                  </div>   
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="footer row">
+          <div class="col l4">
+            <h5 class="left-align white-text">Franco's Veterinaria y Pet Shop</h5>
+            <p>Lunes a Sabados 09:00 Hs a 20:00Hs. Domingos y Feriados solo emergencias 24Hs</p>
+            <p>Río de Janeiro 300 - CABA</p>
+          </div>
+          <div class="right-align col l2 offset-l6 ">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+              <li><a class="grey-text text-lighten-3" href="jugueteria.html">Juguetes</a></li>
+              <li><a class="grey-text text-lighten-3" href="farmacia.html">Farmacia</a></li>
+              <li><a class="grey-text text-lighten-3" href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="divIconos"> 
+            <img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook">
+            <img class="iconos" src="./assets/share_black_24dp.svg" alt="share">
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+      <a  href="https://wa.me/5491141498580"><img class=" btnWhatsapp" src="./assets/btn_whatsapp.png" alt="whatsapp"></a>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script/script.js"></script>    
+</body>
+</html>
