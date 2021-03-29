@@ -99,7 +99,7 @@ if (tablaFarmacia) {
         </div>`
       }
       document.getElementById(element._id).addEventListener('click', (e) => {
-        console.log("hola")
+        console.log(e.target)
       })
     });    
   }
