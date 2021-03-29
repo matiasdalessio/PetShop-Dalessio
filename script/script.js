@@ -29,8 +29,6 @@ fetch("https://apipetshop.herokuapp.com/api/articulos")
 }
 
 function myScript(data){
-  
-  infoAPI={}
 
 
 if (tablaFarmacia) {
@@ -60,7 +58,7 @@ if (tablaFarmacia) {
             <div class="card-content">
               <p>${element.descripcion}</p>
             </div>
-            <button id="${element._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i id="${element._id}"class="material-icons">add</i></button>
+            
             <p class="card-price">$ ${element.precio}</p>
           </div>`
       } else{
@@ -72,14 +70,12 @@ if (tablaFarmacia) {
             <div class="card-content">
               <p>${element.descripcion}</p>
             </div>
-            <button id="${element._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i id="${element._id}"class="material-icons">add</i></button>
+            
             <p class="card-price">$ ${element.precio}</p>
           </div>`
       }
       dato1.appendChild(tarjeta)
-      document.getElementById(element._id).addEventListener('click', (e) => {
-        console.log(e.target)
-      })
+      
     });    
   }
 }
@@ -126,6 +122,3 @@ function carousel(){
     });
   });
 }
-
-
-var carrito =[]
