@@ -374,18 +374,12 @@ label{
 }
 
 .btnWhatsapp{
-    left: 93vw;
-    bottom: 4vh;
-    position: absolute;
-    position: fixed;
-    width: 90px;
-       
-}
-.aBtnWhatsapp{
     left: 90%;
     bottom: 4%;
     position: absolute;
     position: fixed;
+    width: 90px;
+       
 }
 
 
