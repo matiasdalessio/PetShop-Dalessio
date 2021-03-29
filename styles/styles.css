@@ -2,8 +2,6 @@ main {
     font-family: 'Dancing Script', cursive;
 }
 
-
-
 img{
     width: 8.5em;
 }
@@ -71,6 +69,7 @@ main{
     justify-content: center;
 }
 .mainContacto{
+    max-width: 100vw;
     display: flex;
     justify-content: space-between;
     margin: 0;
@@ -104,6 +103,7 @@ main{
     justify-content: center;
     align-items: center;
     margin: 0 0.5em;
+    min-width: 4em;
 }
 
 .imgServContacto img{
@@ -174,6 +174,10 @@ h4{
 }
 
 
+.mainTexto .btn{
+    background-color: #EE6E73;
+    font-weight: bold !important;
+}
 
 .titulosEImg{
     margin-top: 5vh;
@@ -198,8 +202,6 @@ h1{
     min-width: 36em;
     max-height: 30em;
 }
-
-
 
 .ubicacion{
     margin-bottom: 6vh;
@@ -232,7 +234,7 @@ label{
 
 
 #tablaJuguetes{
-    margin-top: 15vh;
+    margin: 15vh 5vh 0 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,7 +243,7 @@ label{
 
 
 #tablaFarmacia{
-    margin-top: 15vh;
+    margin: 15vh 5vh 0 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,6 +305,7 @@ label{
     max-height: 1% !important;
 }
 .card-content{
+    font-weight: bold;
     text-align: justify;
     font-size: 20px;
     background-color: #1DE9B6;
@@ -318,6 +321,7 @@ label{
 }
 
 .card-stock{
+    border:2px solid white;
     background-color: red;
     color: white;
     padding: 1vh;
@@ -327,9 +331,8 @@ label{
 } 
 
 .card-stock-ok{
-    background-color: green;
     color: white;
-    padding: 1vh;
+    padding: 2vh;
     margin: 0 !important;
     border-radius: 30px !important;
     font-size: 20px;
@@ -379,8 +382,8 @@ label{
        
 }
 .aBtnWhatsapp{
-    left: 93vw;
-    bottom: 4vh;
+    left: 90%;
+    bottom: 4%;
     position: absolute;
     position: fixed;
 }
