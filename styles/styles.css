@@ -273,8 +273,8 @@ label{
     align-items: center;
     max-width: 350px;
     min-width: 350px;
-    min-height: 50em !important;
-    max-height: 50em !important;
+    min-height: 54em !important;
+    max-height: 54em !important;
 }
 
 .carta{
@@ -309,14 +309,15 @@ label{
     max-height: 1% !important;
 }
 .card-content{
-    font-weight: bold;
-    text-align: justify;
+    line-height: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
     font-size: 20px;
     background-color: #1DE9B6;
     border-radius: 30px !important;
     margin: 0em;
-    max-height: 12em !important;
-    min-height: 12em !important;
+    max-height: 16em !important;
+    min-height: 16em !important;
     overflow: hidden;
 }
 
@@ -325,6 +326,8 @@ label{
 }
 
 .card-stock{
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
     border:2px solid white;
     background-color: red;
     color: white;

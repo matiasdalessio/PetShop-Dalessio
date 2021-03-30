@@ -29,6 +29,7 @@ fetch("https://apipetshop.herokuapp.com/api/articulos")
 }
 
 function myScript(data){
+  
 
 
 if (tablaFarmacia) {
@@ -70,7 +71,7 @@ if (tablaFarmacia) {
             <div class="card-content">
               <p>${element.descripcion}</p>
             </div>
-            
+           
             <p class="card-price">$ ${element.precio}</p>
           </div>`
       }
@@ -82,32 +83,32 @@ if (tablaFarmacia) {
 
 
 function validacionFormYAlert(){
-    nombre.addEventListener('blur', validacionForm)
-    apellido.addEventListener('blur', validacionForm)
-    telefono.addEventListener('blur', validacionForm)
-    email.addEventListener('blur', validacionForm)
-      
-    function validacionForm(e){
-      if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== ""){
-        btnSubmit.removeAttribute('disabled');
-      } 
-    }
+  nombre.addEventListener('blur', validacionForm)
+  apellido.addEventListener('blur', validacionForm)
+  telefono.addEventListener('blur', validacionForm)
+  email.addEventListener('blur', validacionForm)
+    
+  function validacionForm(e){
+    if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== ""){
+      btnSubmit.removeAttribute('disabled');
+    } 
+  }
 
 
 
-    btnSubmit.addEventListener("click", (event)=>{
-      event.preventDefault()
-      document.getElementById("formulario").reset()
-        Swal.fire({
-            icon: 'success',
-            title: `¡Tus datos fueron envíados con exito, nos pondremos en contacto en breve!`,
-            confirmButtonText: '<i class="material-icons right">thumb_up</i>Genial!',
-            timer: 3500,
-          }).then((result) => {
-            window.location.href ='/'
-          })
+  btnSubmit.addEventListener("click", (event)=>{
+    event.preventDefault()
+    document.getElementById("formulario").reset()
+      Swal.fire({
+          icon: 'success',
+          title: `¡Tus datos fueron envíados con exito, nos pondremos en contacto en breve!`,
+          confirmButtonText: '<i class="material-icons right">thumb_up</i>Genial!',
+          timer: 3500,
+        }).then((result) => {
+          window.location.href ='/'
+        })
 
-    })
+      })
 
   
 }
