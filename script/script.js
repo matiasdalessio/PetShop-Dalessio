@@ -23,12 +23,19 @@ fetch("https://apipetshop.herokuapp.com/api/articulos")
 
 function myScript(data){
   
+ 
+
   infoAPI= JSON.parse(JSON.stringify(data.response))
 
-  infoAPIDefault = JSON.parse(JSON.stringify(infoAPI))
-  
-    
   var carrito =[]
+    if (localStorage.getItem("carrito")) {
+      carrito= JSON.parse(localStorage.getItem("carrito"))
+      console.log(carrito)
+    } 
+
+  dibujarTablaCarrito(carrito,contenedorCarrito)
+    
+  
 
 if (tablaFarmacia) {
   dibujarTablaProductos(infoAPI, tablaFarmacia)
@@ -37,12 +44,15 @@ if (tablaFarmacia) {
 }
 
   function dibujarTablaProductos(array, dato1){
+
     
     dato1.innerHTML = "";
     if (tablaFarmacia) {
-      array = array.filter((producto)=> producto.tipo == "Medicamento")        
+      array = array.filter((producto)=> producto.tipo == "Medicamento") 
+      dibujarTablaCarrito(carrito,contenedorCarrito)        
     } else if(tablaJuguetes){
       array = array.filter((producto)=> producto.tipo == "Juguete")
+      dibujarTablaCarrito(carrito,contenedorCarrito) 
     } else {
       array = ""
     }
@@ -78,7 +88,7 @@ if (tablaFarmacia) {
       dato1.appendChild(tarjeta)
       element.agregado = false
       element.cantidad = 0
-      element.precioEnCarro= element.precio
+      element.precioEnCarro= element.precio      
       document.getElementById(element._id).addEventListener('click', (e) => {
         const idBoton = e.target.id
         array = array.map(element => {
@@ -88,19 +98,25 @@ if (tablaFarmacia) {
                   element.cantidad += 1
                   element.stock -= 1
                   element. precioEnCarro = element.cantidad * element.precio
+                  if (!carrito.includes(element)) {
+                    carrito.push(element)}                  
+                  console.log(carrito)
+                  localStorage.setItem("carrito", JSON.stringify(carrito))
+                  M.toast({html: '+ Agregaste un elemento al carrito', classes: 'light green rounded '})
+                } else {
+                  M.toast({html: 'No se puede agregar más unidades de este artículo', classes: 'rounded light red'})
                 }}
             return element
         })
-
-        dibujarTablaCarrito(array,contenedorCarrito) 
-        console.log(array)
+        dibujarTablaCarrito(carrito,contenedorCarrito) 
         })
     });    
   }
   
-  function dibujarTablaCarrito(array, dato1){
-    var yaEnCarrito = array.filter(element => element.agregado == true)
-    console.log(yaEnCarrito)
+  function dibujarTablaCarrito(carrito, dato1){
+
+    yaEnCarrito = carrito.filter(element => element.agregado)
+
     var total = 0    
     for (let i = 0; i < yaEnCarrito.length; i++) {
       if (yaEnCarrito[i].precio> 0) {
@@ -121,54 +137,63 @@ if (tablaFarmacia) {
               <td><img class="borderRadious" src="${element.imagen}"></td>
               <td>${element.nombre}</td>
               <td>${element.precioEnCarro}</td>
-              <td><button class="btn-floating waves-effect waves-light red"><i id="R${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="btn-floating waves-effect waves-light red"><i id="S${element._id}"class="material-icons">add</i></button></td>`
+              <td><button class="btn-floating waves-effect waves-light red"><i id="-${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="btn-floating waves-effect waves-light red"><i id="+${element._id}"class="material-icons">add</i></button></td>`
             dato1.appendChild(tarjetaCarrito)
             const calculadorPrecio = document.getElementById("calculadorPrecio")
             calculadorPrecio.innerHTML=`
             <td colspan="2" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
             <td>$${total}</td> 
-            <td><button class="btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> 
+            <td><button id="finalizarCompra" class="btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> 
             <td><button  id="borrarCarrito"class="btn waves-effect waves-light red">vaciar carrito</button></td>
             `
+            document.getElementById("finalizarCompra").addEventListener('click', (e) =>{
+              M.toast({html: 'Acá te derivaría a la pasarela de pagos... Si tuviera una😪', classes: 'light green rounded '})
+            })
+            
             document.getElementById("borrarCarrito").addEventListener('click', (e) => {
               yaEnCarrito.forEach(element => { 
                 element.stock += element.cantidad
                 element.cantidad = element.cantidad - element.cantidad
                 element.agregado = false
+                carrito = []
+                localStorage.removeItem("carrito")
                });     
-                    dibujarTablaCarrito(yaEnCarrito,contenedorCarrito)             
+                    dibujarTablaCarrito(carrito,contenedorCarrito)             
 
             })
 
-            document.getElementById(`R${element._id}`).addEventListener('click', (e) => {
+            document.getElementById(`-${element._id}`).addEventListener('click', (e) => {
               const idABuscar = e.target.id
-              infoAPI = infoAPI.map(element => {
-                if ("R"+element._id == idABuscar){ 
+              console.log(yaEnCarrito)
+              yaEnCarrito = yaEnCarrito.map(element => {
+                if ("-"+element._id == idABuscar){ 
                       element.cantidad -= 1
                       element.stock += 1
-                      element. precioEnCarro = element.cantidad * element.precio
+                      element.precioEnCarro = element.cantidad * element.precio
                       if (element.cantidad ==0) {
                         element.agregado = false
                       }                      
                   }
                   return element
               })
-              dibujarTablaCarrito(array,contenedorCarrito)
+              dibujarTablaCarrito(carrito,contenedorCarrito)
 
             })
-            document.getElementById(`S${element._id}`).addEventListener('click', (e) => {
+            document.getElementById(`+${element._id}`).addEventListener('click', (e) => {
               const idABuscar = e.target.id
-              infoAPI = infoAPI.map(element => {
-                if ("S"+element._id == idABuscar){ 
+              yaEnCarrito = yaEnCarrito.map(element => {
+                if ("+"+element._id == idABuscar){ 
                   if (element.stock > 0) {
                     element.cantidad += 1
                     element.stock -= 1
                     element. precioEnCarro = element.cantidad * element.precio
+                  } else {
+                    M.toast({html: 'No se puede agregar más unidades de este artículo', classes: 'rounded light red'})
                   }}
                   return element
               })
 
-              dibujarTablaCarrito(array,contenedorCarrito)
+              dibujarTablaCarrito(carrito,contenedorCarrito)
 
             })
       })

@@ -32,11 +32,32 @@
         </nav>
       </div>
   </header>
-<main class="mainFarmacia" style="background-image: url(&quot;assets/gato-vacuna.jpeg&quot;); ">
-    <h1 class="animate__animated animate__zoomIn margin-top-15vh tituloPetShop">Farmacia</h1>
-      <div id="tablaFarmacia" class="animate__animated animate__fadeIn" >
-      
-    
+    <main class="mainFarmacia" style="background-image: url(&quot;assets/gato-vacuna.jpeg&quot;); ">
+      <h1 class="animate__animated animate__zoomIn margin-top-15vh tituloPetShop">Farmacia</h1>
+      <table class="tablaCarrito animate__animated animate__fadeIn">
+        <thead>
+          <tr>
+              <th>Imagen Ilustrativa</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Eliminar producto</th>
+          </tr>
+        </thead>
+
+        <tbody id="contenedorCarrito">
+          <tr>
+            <td colspan="5" style="text-align: center; color: red; font-size: 30px;">¡Aún no has añadido ningun elemento de la lista a tu carrito!</td>            
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr id="calculadorPrecio">
+            <td colspan="4" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+            <td> $0</td>           
+          </tr>
+        </tfoot>
+      </table>
+      <div id="tablaFarmacia" class="animate__animated animate__fadeIn" >   
       </div>
     </main>
     <footer class="page-footer">
