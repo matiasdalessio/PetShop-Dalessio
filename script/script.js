@@ -172,6 +172,7 @@ if (tablaFarmacia) {
                       element.precioEnCarro = element.cantidad * element.precio
                       if (element.cantidad ==0) {
                         element.agregado = false
+                        localStorage.removeItem("carrito")
                       }                      
                   }
                   return element
