@@ -26,6 +26,7 @@
               <li><a class="navbar" href="#">JUGUETERÍA</a></li>
               <li><a class="navbar" href="farmacia.html">FARMACIA</a></li>
               <li><a class="navbar" href="contacto.html">CONTACTO</a></li>
+              <a id="carritoDeCompras" class="btn-floating pulse"><i class="material-icons">shopping_cart</i></a>
             </ul>
           </div>
         </nav>
@@ -33,7 +34,30 @@
   </header>
     <main class="mainJugueteria" style="background-image: url(&quot;assets/perros-jugando.jpg&quot;);">
       <h1 class="animate__animated animate__zoomIn margin-top-15vh tituloPetShop">Juguetería</h1>
-      <div id="tablaJuguetes" >    
+      <table class="tablaCarrito animate__animated animate__fadeIn">
+        <thead>
+          <tr>
+              <th>Imagen Ilustrativa</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Eliminar producto</th>
+          </tr>
+        </thead>
+
+        <tbody id="contenedorCarrito">
+          <tr>
+            <td colspan="5" style="text-align: center; color: red; font-size: 30px;">¡Aún no has añadido ningun elemento de la lista a tu carrito!</td>            
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr id="calculadorPrecio">
+            <td colspan="4" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+            <td> $0</td>           
+          </tr>
+        </tfoot>
+      </table>
+      <div id="tablaJuguetes" class="animate__animated animate__fadeIn" >    
       </div>
     </main>
     <footer class="page-footer">

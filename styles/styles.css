@@ -409,3 +409,23 @@ footer{
     
 }
 
+.tablaCarrito{
+    max-width: 50vw;
+    background-color: #EE6E73 !important;
+}
+
+.borderRadious{
+    border-radius: 100px;
+}
+
+.kart{
+    border: 5px solid #1DE9B6 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 300px;
+    bottom: -40px !important;
+}
