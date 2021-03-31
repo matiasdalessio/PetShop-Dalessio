@@ -5,6 +5,7 @@ let nombre = document.getElementById("nombre")
 let apellido = document.getElementById("apellido")
 let telefono = document.getElementById("telefono")
 let email = document.getElementById("email")
+let comentarios = document.getElementById("comentarios")
 let btnSubmit = document.getElementById("submit")
 var contenedorCarrito = document.getElementById("contenedorCarrito")
 
@@ -62,7 +63,7 @@ if (tablaFarmacia) {
        if (element.stock <= 5 ) {
         tarjeta.innerHTML+=
         `<div class="z-depth-5 card">
-            <img class="cardImage" src="${element.imagen}">           
+            <div id="cardImages${element._id}" class="cardImages"></div>           
             <p class="card-title">${element.nombre}</p>
             <p class="card-stock">¡Últimas unidades!</p>
             <div class="card-content">
@@ -74,7 +75,7 @@ if (tablaFarmacia) {
       } else{
         tarjeta.innerHTML+=
         `<div class="z-depth-5 card">
-            <img class="cardImage" src="${element.imagen}">           
+            <div id="cardImages${element._id}" class="cardImages"></div>          
             <p class="card-title">${element.nombre}</p>
             <p class="card-stock-ok"></p>
             <div class="card-content">
@@ -85,6 +86,7 @@ if (tablaFarmacia) {
           </div>`
       }
       dato1.appendChild(tarjeta)
+      document.getElementById("cardImages"+element._id).style.backgroundImage = `url("${element.imagen}")`;
       element.agregado = false
       element.cantidad = 0
       element.precioEnCarro= element.precio      
@@ -205,9 +207,10 @@ function validacionFormYAlert(){
   apellido.addEventListener('blur', validacionForm)
   telefono.addEventListener('blur', validacionForm)
   email.addEventListener('blur', validacionForm)
+  comentarios.addEventListener('blur', validacionForm)
     
   function validacionForm(e){
-    if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== ""){
+    if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== "" && comentarios.value !== ""){
       btnSubmit.removeAttribute('disabled');
     } 
   }
