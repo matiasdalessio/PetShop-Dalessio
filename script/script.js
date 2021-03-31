@@ -30,7 +30,6 @@ function myScript(data){
   var carrito =[]
     if (localStorage.getItem("carrito")) {
       carrito= JSON.parse(localStorage.getItem("carrito"))
-      console.log(carrito)
     } 
 
   dibujarTablaCarrito(carrito,contenedorCarrito)
@@ -100,7 +99,6 @@ if (tablaFarmacia) {
                   element. precioEnCarro = element.cantidad * element.precio
                   if (!carrito.includes(element)) {
                     carrito.push(element)}                  
-                  console.log(carrito)
                   localStorage.setItem("carrito", JSON.stringify(carrito))
                   M.toast({html: '+ Agregaste un elemento al carrito', classes: 'light green rounded '})
                 } else {
@@ -164,7 +162,6 @@ if (tablaFarmacia) {
 
             document.getElementById(`-${element._id}`).addEventListener('click', (e) => {
               const idABuscar = e.target.id
-              console.log(yaEnCarrito)
               yaEnCarrito = yaEnCarrito.map(element => {
                 if ("-"+element._id == idABuscar){ 
                       element.cantidad -= 1
