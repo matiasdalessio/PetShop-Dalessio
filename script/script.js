@@ -143,7 +143,7 @@ if (tablaFarmacia) {
             const calculadorPrecio = document.getElementById("calculadorPrecio")
             calculadorPrecio.innerHTML=`
             <td><button  id="borrarCarrito"class="z-depth-5 btn waves-effect waves-light red">VACIAR CARRITO</button></td>
-            <td style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+            <td style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL A PAGAR</td> 
             <td>$${total}</td>            
             <td><button id="finalizarCompra" class="z-depth-5 btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> `
             document.getElementById("finalizarCompra").addEventListener('click', (e) =>{
@@ -169,6 +169,7 @@ if (tablaFarmacia) {
                       element.cantidad -= 1
                       element.stock += 1
                       element.precioEnCarro = element.cantidad * element.precio
+                      localStorage.setItem("carrito", JSON.stringify(carrito))                      
                       if (element.cantidad ==0) {
                         element.agregado = false
                         localStorage.removeItem("carrito")
@@ -187,6 +188,7 @@ if (tablaFarmacia) {
                     element.cantidad += 1
                     element.stock -= 1
                     element. precioEnCarro = element.cantidad * element.precio
+                    localStorage.setItem("carrito", JSON.stringify(carrito))
                   } else {
                     M.toast({html: 'No se puede agregar más unidades de este artículo', classes: 'rounded light red'})
                   }}
