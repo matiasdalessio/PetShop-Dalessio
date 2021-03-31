@@ -489,7 +489,6 @@ h4{
     justify-content: center;
     line-height: 25px;
     margin: 0;
-
     background-color: #1DE9B6;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 30px;
@@ -514,7 +513,7 @@ h4{
     display: flex;
     align-items: center;
     line-height: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Permanent Marker', cursive;
     text-align: left;
     font-size: 18px;
     background-color: #1DE9B6;
