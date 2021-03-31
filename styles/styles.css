@@ -425,7 +425,9 @@ h1{
     min-height: 43em !important;
     max-height: 43em !important;
 }
-
+.btnCarrito{
+    font-size: 45px !important;
+}
 .carta{
     
     display: flex;

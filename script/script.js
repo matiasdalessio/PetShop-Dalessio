@@ -69,7 +69,7 @@ if (tablaFarmacia) {
             <div class="card-content">
               <p>${element.descripcion}</p>
             </div>
-            <button class="btn-floating kart halfway-fab waves-effect waves-light red"><i id="${element._id}"class="material-icons">add_shopping_cart</i></button>
+            <button class="btn-floating kart btn pulse halfway-fab waves-effect waves-light red"><i id="${element._id}"class="btnCarrito material-icons">add_shopping_cart</i></button>
             <p class="card-price">$ ${element.precio}</p>
           </div>`
       } else{
@@ -81,7 +81,7 @@ if (tablaFarmacia) {
             <div class="card-content">
               <p>${element.descripcion}</p>
             </div>
-            <button class="btn-floating kart halfway-fab waves-effect waves-light red"><i id="${element._id}"class="material-icons">add_shopping_cart</i></button>
+            <button class="btn-floating kart btn pulse halfway-fab waves-effect waves-light red"><i id="${element._id}"class="btnCarrito material-icons">add_shopping_cart</i></button>
             <p class="card-price">$ ${element.precio}</p>
           </div>`
       }
@@ -138,16 +138,14 @@ if (tablaFarmacia) {
               <td><img class=" z-depth-5 borderRadious" src="${element.imagen}"></td>
               <td>${element.nombre}</td>
               <td>$${element.precioEnCarro}</td>
-              <td class="carritoCantidad"><button class="z-depth-2 btn-floating waves-effect waves-light red"><i id="-${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="z-depth-2 btn-floating waves-effect waves-light red"><i id="+${element._id}"class="material-icons">add</i></button></td>`
+              <td class="carritoCantidad"><button class="z-depth-3 btn-floating waves-effect waves-light red"><i id="-${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="z-depth-3 btn-floating waves-effect waves-light red"><i id="+${element._id}"class="material-icons">add</i></button></td>`
             dato1.appendChild(tarjetaCarrito)
             const calculadorPrecio = document.getElementById("calculadorPrecio")
             calculadorPrecio.innerHTML=`
-            <td><button id="finalizarCompra" class="z-depth-5 btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> 
-            <td style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
-            <td>$${total}</td> 
-            
             <td><button  id="borrarCarrito"class="z-depth-5 btn waves-effect waves-light red">VACIAR CARRITO</button></td>
-            `
+            <td style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+            <td>$${total}</td>            
+            <td><button id="finalizarCompra" class="z-depth-5 btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> `
             document.getElementById("finalizarCompra").addEventListener('click', (e) =>{
               M.toast({html: 'Acá te derivaría a la pasarela de pagos... Si tuviera una😪', classes: 'light green rounded '})
             })
