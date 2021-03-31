@@ -535,6 +535,8 @@ h4{
 } 
 
 .tituloPetShop{
+    font-size: 90px;
+    font-weight: bold;
     border: 1px solid black;
     padding: 5px 10px;
     display: flex;
