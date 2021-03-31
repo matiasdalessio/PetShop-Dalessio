@@ -126,25 +126,27 @@ if (tablaFarmacia) {
         total = 0
       }
       if (yaEnCarrito.length === 0) {
-      document.getElementById("contenedorCarrito").innerHTML = `<td colspan="5" style="text-align: center; color: red; font-size: 30px;">¡Aún no has añadido ningun elemento de la lista a tu carrito!</td>`  
-      document.getElementById("calculadorPrecio").innerHTML =`<td colspan="4" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+      document.getElementById("contenedorCarrito").innerHTML = `<td colspan="4" style="text-align: center; color: white; font-size: 40px;">¡Aún no has añadido ningun elemento de la lista a tu carrito!</td>`  
+      document.getElementById("calculadorPrecio").innerHTML =`<td colspan="3" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
       <td> $0</td> `    
       } else{
       dato1.innerHTML =""
       yaEnCarrito.map(element =>{
-        const tarjetaCarrito = document.createElement("tr")  
+        const tarjetaCarrito = document.createElement("tr") 
+        tarjetaCarrito.className = "tablaCarrito" 
         tarjetaCarrito.innerHTML +=`
-              <td><img class="borderRadious" src="${element.imagen}"></td>
+              <td><img class=" z-depth-5 borderRadious" src="${element.imagen}"></td>
               <td>${element.nombre}</td>
-              <td>${element.precioEnCarro}</td>
-              <td><button class="btn-floating waves-effect waves-light red"><i id="-${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="btn-floating waves-effect waves-light red"><i id="+${element._id}"class="material-icons">add</i></button></td>`
+              <td>$${element.precioEnCarro}</td>
+              <td class="carritoCantidad"><button class="z-depth-2 btn-floating waves-effect waves-light red"><i id="-${element._id}"class="material-icons">remove</i></button>${element.cantidad}<button class="z-depth-2 btn-floating waves-effect waves-light red"><i id="+${element._id}"class="material-icons">add</i></button></td>`
             dato1.appendChild(tarjetaCarrito)
             const calculadorPrecio = document.getElementById("calculadorPrecio")
             calculadorPrecio.innerHTML=`
-            <td colspan="2" style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
+            <td><button id="finalizarCompra" class="z-depth-5 btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> 
+            <td style="text-align: center; font-weight: bold; font-size: 30px;">TOTAL</td> 
             <td>$${total}</td> 
-            <td><button id="finalizarCompra" class="btn waves-effect waves-light green">FINALIZAR COMPRA</button></td> 
-            <td><button  id="borrarCarrito"class="btn waves-effect waves-light red">vaciar carrito</button></td>
+            
+            <td><button  id="borrarCarrito"class="z-depth-5 btn waves-effect waves-light red">VACIAR CARRITO</button></td>
             `
             document.getElementById("finalizarCompra").addEventListener('click', (e) =>{
               M.toast({html: 'Acá te derivaría a la pasarela de pagos... Si tuviera una😪', classes: 'light green rounded '})
@@ -246,3 +248,28 @@ function carousel(){
   });
 }
 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.addEventListener("click", function(event) {
+  modal.style.display = "block";
+})
+
+// When the user clicks on <span> (x), close the modal
+span.addEventListener("click", function(event) {
+  modal.style.display = "none";
+})
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+})

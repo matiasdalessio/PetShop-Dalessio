@@ -26,7 +26,6 @@
               <li><a class="navbar" href="jugueteria.html">JUGUETERÍA</a></li>
               <li><a class="navbar" href="farmacia.html">FARMACIA</a></li>
               <li><a class="navbar" href="#">CONTACTO</a></li>
-              <a id="carritoDeCompras" class="btn-floating pulse"><i class="material-icons">shopping_cart</i></a>
             </ul>
           </div>
         </nav>
@@ -179,8 +178,7 @@
           <p>Río de Janeiro 300 - CABA</p>
         </div>
         <div class="divIconos right-align col l1 offset-l1"> 
-          <img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook">
-          <img class="iconos" src="./assets/share_black_24dp.svg" alt="share">
+          <a href="https://www.facebook.com/FrancosVet/?ref=page_internal"><img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook"></a>
         </div>
         <div class="right-align col l1  ">
           <ul>
@@ -191,6 +189,30 @@
           </ul>
         </div>
       </div>
+    </div>
+    <a id="myBtn" class="btn pulse"><i class="material-icons iconoCarrito">shopping_cart</i></a>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <table class="tablaCarrito animate__animated animate__fadeIn">
+          <thead>
+            <tr>
+                <th>Imagen Ilustrativa</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+          </thead>    
+          <tbody id="contenedorCarrito">
+            <tr>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr id="calculadorPrecio">          
+            </tr>
+          </tfoot>
+        </table>
+      </div>      
     </div>
   </footer>
     

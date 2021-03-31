@@ -26,10 +26,6 @@
                   <li><a class="navbar" href="jugueteria.html">JUGUETERÍA</a></li>
                   <li><a class="navbar" href="farmacia.html">FARMACIA</a></li>
                   <li><a class="navbar" href="contacto.html">CONTACTO</a></li>
-                  <a id="carritoDeCompras" class="btn-floating pulse"><i class="material-icons">shopping_cart</i>
-                  <div class="contenedorCarrito">
-
-                  </div>
                   </a>
                 </ul>
               </div>
@@ -52,7 +48,7 @@
           <div class="container mainTexto">
             <div class="contenedorTextoIndex">
               <h3 class="" >¿Quiénes somos?</h2> 
-              <h5 class="h5Main">Franco's es un espacio donde tratamos a tu mascota como se merece, cuidando cada detalle y haciendolo sentir como en casa. Nuestros especialistas podrán brindarle asesoramiento y diagnóstico sobre los cuidados que requiere su mascota. Para realizar una consulta, complete el formulario en el siguiente enlace. ¡Nos comunicaremos a la brevedad!</h5>
+              <h5 class="h5Main">Franco's es un espacio donde tratamos a tu mascota como se merece, cuidando cada detalle y haciéndolo sentir como en casa. Nuestros especialistas podrán brindarle asesoramiento y diagnóstico sobre los cuidados que requiere su mascota. Para realizar una consulta, complete el formulario en el siguiente enlace. ¡Nos comunicaremos a la brevedad!</h5>
               <a class="z-depth-5 btn" href="./contacto.html">CONTACTO</a>  
             </div>
             <img class="animate__animated animate__fadeInRight z-depth-5 imgTexto" src="./assets/mascota y dueña.jpg" alt="mascota con su dueña">
@@ -75,8 +71,7 @@
               <p>Río de Janeiro 300 - CABA</p>
             </div>
             <div class="divIconos right-align col l1 offset-l1"> 
-              <img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook">
-              <img class="iconos" src="./assets/share_black_24dp.svg" alt="share">
+              <a href="https://www.facebook.com/FrancosVet/?ref=page_internal"><img class="iconos" src="./assets/facebook_black_24dp.svg" alt="facebook"></a>
             </div>
             <div class="right-align col l1  ">
               <ul>
@@ -87,6 +82,30 @@
               </ul>
             </div>
           </div>
+        </div>
+        <a id="myBtn" class="btn pulse"><i class="material-icons iconoCarrito">shopping_cart</i></a>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <table class="tablaCarrito animate__animated animate__fadeIn">
+              <thead>
+                <tr>
+                    <th>Imagen Ilustrativa</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+              </thead>    
+              <tbody id="contenedorCarrito">
+                <tr>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr id="calculadorPrecio">          
+                </tr>
+              </tfoot>
+            </table>
+          </div>      
         </div>
       </footer>
       <a  href="https://wa.me/5491141498580"><img class=" animate__animated animate__fadeInUp btnWhatsapp" src="./assets/btn_whatsapp.png" alt="whatsapp"></a>
