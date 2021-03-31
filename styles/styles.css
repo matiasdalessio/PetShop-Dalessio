@@ -453,6 +453,8 @@ h4{
     width: 60%;
     max-width: 60%;
     min-width: 60%;
+    max-height: 10%;
+    min-height: 10%;
 }
 
 .card{
@@ -478,13 +480,16 @@ h4{
     flex-direction: column;
     align-content: center;
 }
-
+.card .card-title{
+    padding: 0 1vh;
+}
 .card-title{
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 25px;
     margin: 0;
+
     background-color: #1DE9B6;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 30px;
@@ -533,7 +538,9 @@ h4{
     font-size: 20px;
 } 
 
+
 .card-stock-ok{
+    min-height: 6vh;
     color: white;
     padding: 2vh;
     margin: 0 !important;
