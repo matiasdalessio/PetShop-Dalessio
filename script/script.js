@@ -211,10 +211,12 @@ function validacionFormYAlert(){
   email.addEventListener('blur', validacionForm)
   comentarios.addEventListener('blur', validacionForm)
     
-  function validacionForm(e){
+  function validacionForm(){
     if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== "" && comentarios.value !== ""){
       btnSubmit.removeAttribute('disabled');
-    } 
+    }  else{
+      btnSubmit.disabled =true;
+    }
   } 
 
 
@@ -224,7 +226,7 @@ function validacionFormYAlert(){
     document.getElementById("formulario").reset()
       Swal.fire({
           icon: 'success',
-          title: `¡Tus datos fueron envíados con exito, nos pondremos en contacto en breve!`,
+          title: `¡Tus datos fueron envíados con éxito! ¡Nos pondremos en contacto en breve!`,
           confirmButtonText: '<i class="material-icons right">thumb_up</i>Genial!',
           timer: 3500,
         }).then((result) => {
