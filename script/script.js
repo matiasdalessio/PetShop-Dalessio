@@ -215,7 +215,7 @@ function validacionFormYAlert(){
     if (nombre.value !== "" && apellido.value !== "" && telefono.value !== "" && email.value !== "" && comentarios.value !== ""){
       btnSubmit.removeAttribute('disabled');
     } 
-  }
+  } 
 
 
 
